@@ -1,0 +1,57 @@
+<h1>AMIGOS PRÓXIMOS</h1>
+
+<p>Lista dos 3 amigos mais próximos.</p>
+<p style="color:red;font-size: 18px;"><em>{{erro}}</em></p>
+
+<div class="row">
+  <div class="col-lg-12 col-md-12">
+    <div class="col-lg-3 col-md-3 form-group">
+      <label>LATITUDE</label>
+      <input type="text" [(ngModel)]="txtLatitude" class="form-control" />
+    </div>
+    <div class="col-lg-3 col-md-3 form-group">
+        <label>LONGITUDE</label>
+        <input type="text" [(ngModel)]="txtLongitude" class="form-control" />
+      </div>
+      <div class="col-lg-3 col-md-3 form-group">
+          <label>TOKEN</label>
+          <input type="text" [(ngModel)]="txtToken" class="form-control" />
+        </div>
+        <div class="col-lg-3 col-md-3 form-group">
+            <label>&nbsp;</label>
+            <input type="button" id="btnLocalizar" (click)="Pesquisar()" value="LOCALIZAR" class="glyphicon glyphicon btn btn-primary form-control"/>
+          </div>
+  </div>
+</div>
+<div class="row">
+    <div class="col-lg-12 col-md-12">
+        <div class="col-lg-12 col-md-12">
+            <table class='table' *ngIf="forecasts">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>NOME</th>
+                    <th>LOGIN</th>
+                    <th>LATITUDE</th>
+                    <th>LONGITUDE</th>
+                    <th>DISTÂNCIA</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let forecast of forecasts">
+                    <td>{{ forecast.id }}</td>
+                    <td>{{ forecast.nome }}</td>
+                    <td>{{ forecast.login }}</td>
+                    <td>{{ forecast.latitude }}</td>
+                    <td>{{ forecast.longitude }}</td>
+                    <td>{{ forecast.distancia }}</td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+      </div>
+</div>
+
+
+
+
