@@ -1,4 +1,5 @@
-﻿using LocalizaAmigos.Domain.Entities;
+﻿using LocalizaAmigos.Application.Interfaces;
+using LocalizaAmigos.Domain.Entities;
 using LocalizaAmigos.Infra.Data.Repositories;
 using System;
 using System.Collections.Generic;
@@ -7,14 +8,14 @@ using System.Text;
 
 namespace LocalizaAmigos.Application
 {
-    public class AmigoApp
+    public class AmigoApp 
     {
         public static List<Amigo> ListaAmigosProximo(double Latitude, double Longitude, string login)
         {
             var _repositorio = new AmigoRepositorio();
-
+           
             List<Amigo> LA = new List<Amigo>();
-            List<Amigo> lista = _repositorio.Selecionar();
+            List<Amigo> lista = _repositorio.Listar();
             Dictionary<double, Amigo> dc = new Dictionary<double, Amigo>();
             foreach (Amigo a in lista)
             {

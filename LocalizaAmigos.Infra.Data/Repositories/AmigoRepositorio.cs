@@ -1,22 +1,20 @@
 ﻿using LocalizaAmigos.Domain.Entities;
+using LocalizaAmigos.Domain.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Text;
 
 namespace LocalizaAmigos.Infra.Data.Repositories
 {
-    public class AmigoRepositorio
+    public class AmigoRepositorio : IRepositorioBase<Amigo>
     {
-        public List<Amigo> Selecionar()
+        public List<Amigo> Listar()
         {
-
             try
             {
                 List<Amigo> lstAmigo = new List<Amigo>();
                 using (var conn = Data.ADO.ADO.GetConnection())
                 {
-
                     using (var comm = Data.ADO.ADO.GetCommand("LocalizaAmigos_Select", conn))
                     {
                         conn.Open();

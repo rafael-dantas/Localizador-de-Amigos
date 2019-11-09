@@ -10,8 +10,6 @@ namespace LocalizaAmigos.Infra.Data.ADO
 {
     public class ADO
     {
-        //private static                
-
         public static SqlConnection GetConnection()
         {           
             string connectionString = new ConfigurationBuilder()
